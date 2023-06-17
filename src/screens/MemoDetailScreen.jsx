@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, ScrollView, Text, StyleSheet } from 'react-native';
-
+import {
+  View, ScrollView, Text, StyleSheet,
+} from 'react-native';
 import AppBar from '../components/AppBar';
-import CircleBultton from '../components/CircleButton';
+import CircleButton from '../components/CircleButton';
 
 export default function MemoDetailScreen() {
   return (
@@ -17,7 +18,7 @@ export default function MemoDetailScreen() {
           買い物リスト書体やレイアウトなどを確認するために用います。本文用なので使い方を間違えると不自然に見えることもありますので要注意。
         </Text>
       </ScrollView>
-      <CircleBultton style={{ top: 160, bottom: 'auto' }}>+</CircleBultton>
+      <CircleButton style={{ top: 160, bottom: 'auto' }} name="edit-2" />
     </View>
   );
 }

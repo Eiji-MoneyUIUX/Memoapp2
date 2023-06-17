@@ -1,21 +1,24 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { string, shape } from 'prop-types';
+import { Feather } from '@expo/vector-icons';
 
 export default function CircleBultton(props) {
-  const { children, style } = props;
+  //  const { children, style, name } = props;
+  const { style, name } = props;
   return (
     <View style={[styles.circleButton, style]}>
-      <Text style={styles.circleButtonLabel}>{children}</Text>
+      <Feather name={name} size={24} color="white" />
     </View>
   );
 }
 
 CircleBultton.propTypes = {
   // eslint-disable-next-line react/require-default-props
-  children: string,
+  // children: string,
   style: shape(),
+  name: string.isRequired,
 };
 
 CircleBultton.defaultProps = {
