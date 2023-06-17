@@ -8,7 +8,7 @@ function Hello(props) {
     // eslint-disable-next-line react/jsx-indent
     <View>
       <Text style={[styles.text, style]}>
-        {`Hello yes ${children}${bang ? '!' : 'No..'}`}
+      {`Hello yes ${children}${bang ? '!' : 'No..'}`}
       </Text>
     </View>
   );
