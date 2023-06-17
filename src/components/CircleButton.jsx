@@ -1,18 +1,25 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { string } from 'prop-types';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { string, shape } from 'prop-types';
 
 export default function CircleBultton(props) {
-  const { children } = props;
+  const { children, style } = props;
   return (
-    <View style={styles.circleButton}>
+    <View style={[styles.circleButton, style]}>
       <Text style={styles.circleButtonLabel}>{children}</Text>
     </View>
   );
 }
 
-CircleBultton.protoTypes = {
-  children: string.isRequred,
+CircleBultton.propTypes = {
+  // eslint-disable-next-line react/require-default-props
+  children: string,
+  style: shape(),
+};
+
+CircleBultton.defaultProps = {
+  style: null,
 };
 
 const styles = StyleSheet.create({
