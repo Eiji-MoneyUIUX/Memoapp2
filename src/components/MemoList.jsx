@@ -5,8 +5,9 @@ import { Feather } from '@expo/vector-icons';
 
 export default function MemoList() {
   return (
-    <View style={styles.memoListItem}>
-      <View>
+    //<View style={styles.memoListItem}>
+    <View>
+      <View style={styles.memoListItem}>
         <Text style={styles.memoListItemTitle}>買い物リスト</Text>
         <Text style={styles.memoListItemDate}>2023年6月17日 8:00</Text>
         <View>
