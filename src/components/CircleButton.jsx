@@ -1,16 +1,16 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { string, shape } from 'prop-types';
+import { string, shape, func } from 'prop-types';
 import { Feather } from '@expo/vector-icons';
 
 export default function CircleBultton(props) {
   //  const { children, style, name } = props;
-  const { style, name } = props;
+  const { style, name, onPress } = props;
   return (
-    <View style={[styles.circleButton, style]}>
+    <TouchableOpacity style={[styles.circleButton, style]} onPress={onPress}>
       <Feather name={name} size={24} color="white" />
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -19,10 +19,12 @@ CircleBultton.propTypes = {
   // children: string,
   style: shape(),
   name: string.isRequired,
+  onPress: func,
 };
 
 CircleBultton.defaultProps = {
   style: null,
+  onPress: null,
 };
 
 const styles = StyleSheet.create({
