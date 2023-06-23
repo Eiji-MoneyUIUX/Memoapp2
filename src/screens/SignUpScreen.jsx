@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View, Text, TextInput, StyleSheet, TouchableOpacity,
   // Alert,
@@ -8,13 +8,31 @@ import Button from '../components/Button';
 
 export default function SignUpScreen(props) {
   const { navigation } = props;
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   return (
     <View style={styles.container}>
       {/* <AppBar /> */}
       <View style={styles.inner}>
         <Text style={styles.title}>Sign Up</Text>
-        <TextInput style={styles.input} value="Email Address" />
-        <TextInput style={styles.input} value="Password" />
+        <TextInput
+          style={styles.input}
+          value={email}
+          onChangeText={(text) => { setEmail(text); }}
+          autoCapitalize="none"
+          keyboardTyle="email-address"
+          placeholder="Email address"
+          textContentType="emailAddress"
+        />
+        <TextInput
+          style={styles.input}
+          value={password}
+          onChangeText={(text) => { setPassword(text); }}
+          autoCapitalize="none"
+          placeholder="Password"
+          secureTextEntry
+          textContentType="password"
+        />
         {/* <View style={styles.butotonContainer}>
           <Text style={styles.buttonLabel}>Submit</Text>
         </View> */}
@@ -29,7 +47,7 @@ export default function SignUpScreen(props) {
           }}
         />
         <View style={styles.footer}>
-          <Text style={styles.footerText}>Not registerd?</Text>
+          <Text style={styles.footerText}>Already registered?</Text>
           <TouchableOpacity
             onPress={() => {
               navigation.reset({
@@ -65,7 +83,7 @@ const styles = StyleSheet.create({
     height: 48,
     // lineHeight: 32,
     fontWeight: 'bold',
-    color: '#DDDDDD',
+    color: '#000000',
     borderColor: '#DDDDDD',
     borderWidth: 1,
     backgroundColor: '#FFFFFF',
